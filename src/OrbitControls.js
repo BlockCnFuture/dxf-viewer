@@ -641,7 +641,7 @@ export const OrbitControls = function ( object, domElement ) {
 		if ( needsUpdate ) {
 
 			// prevent the browser from scrolling on cursor keys
-			event.preventDefault();
+			//event.preventDefault();
 
 			scope.update();
 
@@ -862,7 +862,7 @@ export const OrbitControls = function ( object, domElement ) {
 	function onMouseDown( event ) {
 
 		// Prevent the browser from scrolling.
-		event.preventDefault();
+		//event.preventDefault();
 
 		// Manually set the focus since calling preventDefault above
 		// prevents the browser from setting it automatically.
@@ -971,7 +971,7 @@ export const OrbitControls = function ( object, domElement ) {
 
 		if ( scope.enabled === false ) return;
 
-		event.preventDefault();
+		//event.preventDefault();
 
 		switch ( state ) {
 
@@ -1022,7 +1022,7 @@ export const OrbitControls = function ( object, domElement ) {
 
 		if ( scope.enabled === false || scope.enableZoom === false || ( state !== STATE.NONE && state !== STATE.ROTATE ) ) return;
 
-		event.preventDefault();
+		//event.preventDefault();
 		event.stopPropagation();
 
 		scope.dispatchEvent( startEvent );
@@ -1045,7 +1045,7 @@ export const OrbitControls = function ( object, domElement ) {
 
 		if ( scope.enabled === false ) return;
 
-		event.preventDefault(); // prevent scrolling
+		//event.preventDefault(); // prevent scrolling
 
 		switch ( event.touches.length ) {
 
@@ -1131,7 +1131,7 @@ export const OrbitControls = function ( object, domElement ) {
 
 		if ( scope.enabled === false ) return;
 
-		event.preventDefault(); // prevent scrolling
+		//event.preventDefault(); // prevent scrolling
 		event.stopPropagation();
 
 		switch ( state ) {
@@ -1200,7 +1200,7 @@ export const OrbitControls = function ( object, domElement ) {
 
 		if ( scope.enabled === false ) return;
 
-		event.preventDefault();
+		//event.preventDefault();
 
 	}
 
