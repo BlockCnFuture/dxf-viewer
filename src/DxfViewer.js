@@ -30,6 +30,8 @@ export class DxfViewer {
             Object.assign(this.options, options)
         }
         options = this.options
+        this.renderCallBack = this.options.renderCallBack
+        delete this.options.renderCallBack
 
         this.clearColor = this.options.clearColor.getHex()
 
@@ -244,7 +246,7 @@ export class DxfViewer {
 
     Render() {
         this._EnsureRenderer()
-        this.options?.renderCallBack?.(this.scene, this.camera)
+        this.renderCallBack?.(this.scene, this.camera)
         this.renderer.render(this.scene, this.camera)
     }
 
