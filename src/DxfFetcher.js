@@ -27,9 +27,9 @@ export class DxfFetcher {
                 if (match?.[1]) {
                     let codepage = match[1].trim().toLowerCase()
                     let encoding = 'utf-8'
-                    if (codepage === '936' || codepage === 'ANSI_936' || codepage.includes('gb')) {
+                    if (codepage === '936' || codepage === 'ansi_936' || codepage.includes('gb')) {
                         encoding = 'gbk'
-                    } else if (codepage === '950' || codepage === 'ANSI_950') {
+                    } else if (codepage === '950' || codepage === 'ansi_950') {
                         encoding = 'big5'
                     }
                     if (this.encoding !== encoding) {

@@ -1,6 +1,6 @@
 {
     "name": "@mapcatch/three-dxf-viewer",
-    "version": "1.0.44.1",
+    "version": "1.0.44.2",
     "description": "JavaScript DXF file viewer",
     "main": "src/index.js",
     "author": "Artyom Lebedev<artyom.lebedev@gmail.com>",
