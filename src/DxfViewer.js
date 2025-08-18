@@ -426,7 +426,7 @@ export class DxfViewer {
         if (this.controls) {
             this.controls.dispose()
         }
-        const controls = this.controls = new OrbitControls(this.camera, this.canvas)
+        const controls = this.controls = new OrbitControls(this.camera, this.domContainer)
         controls.enableRotate = false
         controls.mouseButtons = {
             LEFT: three.MOUSE.PAN,
