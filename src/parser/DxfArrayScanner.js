@@ -135,7 +135,7 @@ function parseGroupValue(code, value) {
     if(code >= 1010 && code <= 1059) return parseFloat(value.trim());
     if(code >= 1060 && code <= 1071) return parseInt(value.trim());
 
-    console.log('WARNING: Group code does not have a defined type: %j', { code: code, value: value });
+    console.warn('WARNING: Group code does not have a defined type: %j', { code: code, value: value });
     return value;
 }
 

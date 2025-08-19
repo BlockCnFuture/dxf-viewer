@@ -46,7 +46,7 @@ export class DxfViewer {
                 preserveDrawingBuffer: options.preserveDrawingBuffer
             })
         } catch (e) {
-            console.log("Failed to create renderer: " + e)
+            console.error("Failed to create renderer: " + e)
             this.renderer = null
             return
         }
@@ -213,13 +213,14 @@ export class DxfViewer {
             }
         }
 
+        /*
         console.log(`DXF scene:
                      ${scene.batches.length} batches,
                      ${this.layers.size} layers,
                      ${this.blocks.size} blocks,
                      vertices ${scene.vertices.byteLength} B,
                      indices ${scene.indices.byteLength} B
-                     transforms ${scene.transforms.byteLength} B`)
+                     transforms ${scene.transforms.byteLength} B`)*/
 
         /* Instantiate all entities. */
         for (const batch of scene.batches) {
@@ -426,7 +427,7 @@ export class DxfViewer {
         if (this.controls) {
             this.controls.dispose()
         }
-        const controls = this.controls = new OrbitControls(this.camera, this.domContainer)
+        const controls = this.controls = new OrbitControls(this.camera, this.canvas)
         controls.enableRotate = false
         controls.mouseButtons = {
             LEFT: three.MOUSE.PAN,

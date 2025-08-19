@@ -184,7 +184,7 @@ export class DxfScene {
                 this.numBlocksFlattened++
             }
         }
-        console.log(`${this.numBlocksFlattened} blocks flattened`)
+        //console.log(`${this.numBlocksFlattened} blocks flattened`)
 
         for (const entity of dxf.entities) {
             if (!this._FilterEntity(entity)) {
@@ -193,7 +193,7 @@ export class DxfScene {
             }
             this._ProcessDxfEntity(entity)
         }
-        console.log(`${this.numEntitiesFiltered} entities filtered`)
+        //console.log(`${this.numEntitiesFiltered} entities filtered`)
 
         this.scene = this._BuildScene()
 
@@ -344,7 +344,7 @@ export class DxfScene {
             renderEntities = this._DecomposeHatch(entity, blockCtx)
             break
         default:
-            console.log("Unhandled entity type: " + entity.type)
+            console.error("Unhandled entity type: " + entity.type)
             return
         }
         for (const renderEntity of renderEntities) {
@@ -1142,7 +1142,7 @@ export class DxfScene {
         if ((pattern == null || pattern.isQcadDefault) && entity.patternName) {
             const _pattern = LookupPattern(entity.patternName, this.isMetric)
             if (!_pattern) {
-                console.log(`Hatch pattern with name ${entity.patternName} not found ` +
+                console.error(`Hatch pattern with name ${entity.patternName} not found ` +
                             `(metric: ${this.isMetric})`)
             } else {
                 pattern = _pattern
